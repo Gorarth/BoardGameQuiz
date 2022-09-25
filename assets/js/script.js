@@ -1,24 +1,41 @@
 const startButton = document.getElementById('start-button')
 const nextButton = document.getElementById('next-button')
 const questionArea = document.getElementById('question-area')
-const question = document.getElementById('question')
+const questionID = document.getElementById('question')
 const answerButtons = document.getElementById('answer-buttons')
 
 let shuffledQuestions
 let currentQuestions
 
+startButton.addEventListener('click', startGame)
+
+// function starts the game
 function startGame () {
+    console.log('Start!!!')
 
+    // hides the start button
+    startButton.classList.add('hide')
+    // shuffles questions so they arent in the same order if the quiz is replayed.
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    // sets current questions to 0, as 0 is always the first number in an array
+    currentQuestions = 0
+    // removes the class 'hide' from the question area, enabling it to be viewed.
+    questionArea.classList.remove('hide')
+    // sets the next question using the next question function below
+    setNextQuestion()
 }
 
+// function sets the next question
 function setNextQuestion () {
-
+    showQuestion(shuffledQuestions[currentQuestions])
 }
 
-function showQuestion () {
-
+// takes a question
+function showQuestion (question) {
+    questionID.innerText = question.question
 }
 
+// function resets the game area for next question
 function reset () {
 
 }
