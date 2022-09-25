@@ -29,48 +29,48 @@ function selectAnswer(e) {
 
 const questions = [
     {
-        question: '123123',
+        question: 'What game is based on this famous french fortified city?',
         answers: [
-            {text: '2', correct: true},
-            {text: '3', correct: false},
-            {text: '4', correct: false},
+            {text: 'Carcassonne', correct: true},
+            {text: 'Avignon', correct: false},
+            {text: 'Langres', correct: false},
+            {text: 'La Rochelle', correct: false},
+        ]
+    },
+    {
+        question: 'In Catan, what roll of the dice does the robber need in order to be activated?',
+        answers: [
+            {text: 'Snake eyes', correct: false},
+            {text: '12', correct: false},
+            {text: '7', correct: true},
             {text: '5', correct: false},
         ]
     },
     {
-        question: '123123',
+        question: 'At what age is Magnus Carlsen become a grandmaster?',
         answers: [
-            {text: '2', correct: true},
-            {text: '3', correct: false},
-            {text: '4', correct: false},
-            {text: '5', correct: false},
+            {text: '12', correct: false},
+            {text: '13', correct: true},
+            {text: '14', correct: false},
+            {text: '15', correct: false},
         ]
     },
     {
-        question: '123123',
+        question: 'What does the Monopoly Man wear on his eyes?',
         answers: [
-            {text: '2', correct: true},
-            {text: '3', correct: false},
-            {text: '4', correct: false},
-            {text: '5', correct: false},
+            {text: 'Nothing', correct: true},
+            {text: 'Round Framed Glasses', correct: false},
+            {text: 'A Monocle', correct: false},
+            {text: 'Sunglasses', correct: false},
         ]
     },
     {
-        question: '123123',
+        question: 'Which one of these are Ticket to Ride expansions?',
         answers: [
-            {text: '2', correct: true},
-            {text: '3', correct: false},
-            {text: '4', correct: false},
-            {text: '5', correct: false},
-        ]
-    },
-    {
-        question: '123123',
-        answers: [
-            {text: '2', correct: true},
-            {text: '3', correct: false},
-            {text: '4', correct: false},
-            {text: '5', correct: false},
+            {text: 'Russia', correct: false},
+            {text: 'China', correct: false},
+            {text: 'South America', correct: false},
+            {text: 'Switzerland', correct: true},
         ]
     },
 ]
