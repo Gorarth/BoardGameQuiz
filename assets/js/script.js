@@ -27,17 +27,37 @@ function startGame () {
 
 // function sets the next question
 function setNextQuestion () {
+    reset()
     showQuestion(shuffledQuestions[currentQuestions])
 }
 
 // takes a question
 function showQuestion (question) {
+    // takes the question text from our const and displays it
     questionID.innerText = question.question
+    // creates a button for each of our answers
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+    // takes the text from our question answers and displays them
+        button.innerText = answer.text
+    // adds the class "btn" to each of the buttons created.
+        button.classList.add('btn')
+    // checks if the answer is correct
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtons.appendChild(button)
+    })
+    
 }
 
 // function resets the game area for next question
 function reset () {
-
+    nextButton.classList.add('hide')
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild)
+    }
 }
 
 function selectAnswer(e) {
