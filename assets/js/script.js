@@ -9,6 +9,7 @@ let currentQuestions
 
 startButton.addEventListener('click', startGame)
 
+
 // function starts the game
 function startGame () {
     console.log('Start!!!')
@@ -54,15 +55,54 @@ function showQuestion (question) {
 
 // function resets the game area for next question
 function reset () {
+    clearStatusClass(document.body)
     nextButton.classList.add('hide')
+    // removes previous answers and correctly shows the answers for the question given
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild)
     }
 }
 
+// checks correct answer by checking the dataset of correct if true. checks all buttons using the array.from and foreach =>
 function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtons.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestions + 1) {
+        nextButton.classList.remove('hide')
+    } 
 
+    else {
+        startButton.innerText = "restart"
+        startButton.classList.remove('hide')
+    }
+    
 }
+
+// adds the class correct or wrong class when user clicks there choice.
+function setStatusClass (element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+// removes the above classes to reset for next question
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+}
+
+// event listener for when click on "next" and sets the next question
+nextButton.addEventListener('click', () => {
+    currentQuestions++
+    setNextQuestion()
+})
 
 const questions = [
     {

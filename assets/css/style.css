@@ -36,7 +36,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #1bb100;
+    background-color: yellow;
 }
 
 .start-button, .next-button {
@@ -53,4 +53,15 @@ body {
 
 .hide {
     display:none;
+}
+
+.correct {
+    background-color: #1bb100;
+    border-radius: 10px;
+}
+
+.wrong {
+    background-color: red;
+    border-style:dotted;
+    text-decoration: line-through;
 }
