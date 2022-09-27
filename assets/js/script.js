@@ -150,4 +150,14 @@ const questions = [
             {text: 'Switzerland', correct: true},
         ]
     },
+
+    {
+        question: 'How many checkers does each person use per game?',
+        answers: [
+            {text: '13', correct: false},
+            {text: '15', correct: true},
+            {text: '17', correct: false},
+            {text: '19', correct: false},
+        ]
+    },
 ]
