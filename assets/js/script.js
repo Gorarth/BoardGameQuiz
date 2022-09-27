@@ -3,7 +3,9 @@ const nextButton = document.getElementById('next-button')
 const questionArea = document.getElementById('question-area')
 const questionID = document.getElementById('question')
 const answerButtons = document.getElementById('answer-buttons')
-
+const endScreen = document.getElementById('end-screen')
+const gameTitle = document.getElementById('game-title')
+const endScreenScore = document.getElementById('end-screen-score')
 let shuffledQuestions
 let currentQuestions
 
@@ -22,10 +24,13 @@ function showRules() {
 // function starts the game
 function startGame () {
     console.log('Start!!!')
-    // hides rule button
+    // hides rule button/rules/end screen - shows game title
+    endScreen.classList.add('hide');
     rulesButton.classList.add("hide");
+    rules.classList.add('hide')
+    gameTitle.classList.remove('hide')
     // hides the start button
-    startButton.classList.add('hide')
+    startButton.classList.add('hide');
     // shuffles questions so they arent in the same order if the quiz is replayed.
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     // sets current questions to 0, as 0 is always the first number in an array
@@ -35,6 +40,10 @@ function startGame () {
     // sets the next question using the next question function below
     setNextQuestion()
 }
+
+let score = 0;
+
+
 
 // function sets the next question
 function setNextQuestion () {
@@ -86,8 +95,55 @@ function selectAnswer(e) {
     } 
 
     else {
-        startButton.innerText = "restart"
+        startButton.innerText = "Restart"
         startButton.classList.remove('hide')
+        endScreen.classList.remove('hide')
+        questionArea.classList.add('hide')
+        gameTitle.classList.add('hide')
+
+        if (score === 0) {
+            endScreenScore.innerHTML = 
+            `Lets check out that score...\n
+            Oh dear...\n
+            You didn't get any right!\n
+            better refresh your mind and try again!`
+        } else if (score === 1) {
+            endScreenScore.innerHTML = 
+            `Lets check out that score...
+            Oh dear...
+            You only got the 1 question right!
+            Still, it's better than none I guess?`
+        } else if (score === 2) {
+            endScreenScore.innerHTML = 
+            `Lets check out that score...
+            Not bad... for a Meeple!
+            You only got 2 right!
+            Keep playing.. Maybe you'll improve?`
+        } else if (score === 3) {
+            endScreenScore.innerHTML = 
+            `Lets check out that score...
+            Not bad... for a Meeple!
+            You got 3 right!
+            Half way there until a master!`
+        } else if (score === 4) {
+            endScreenScore.innerHTML = 
+            `Lets check out that score...
+            Pretty good score!
+            You got a total of 4!
+            Almost there!`
+        } else if (score === 5) {
+            endScreenScore.innerHTML = 
+            `Lets check out that score...
+            Lets go!
+            A total of 5!
+            You know your Meeples from your Pawns!`
+        } else if (score === 6) {
+            endScreenScore.innerHTML = 
+            `Lets check out that score...
+            The Master has arrived!
+            100% correct!
+            You obviously no longer need the hint cards in Catan!`
+        }
     }
     
 }
