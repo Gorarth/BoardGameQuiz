@@ -9,11 +9,21 @@ let currentQuestions
 
 startButton.addEventListener('click', startGame)
 
+// this section is used to show the rules, when the rule button is clicked.
+const rulesContainer = document.getElementById("rules")
+const rulesButton = document.getElementById("rules-button")
+rulesButton.addEventListener("click", showRules);
+
+function showRules() {
+    rulesContainer.classList.remove("hide");
+    rulesButton.classList.add("hide");
+}
 
 // function starts the game
 function startGame () {
     console.log('Start!!!')
-
+    // hides rule button
+    rulesButton.classList.add("hide");
     // hides the start button
     startButton.classList.add('hide')
     // shuffles questions so they arent in the same order if the quiz is replayed.
@@ -103,6 +113,8 @@ nextButton.addEventListener('click', () => {
     currentQuestions++
     setNextQuestion()
 })
+
+
 
 const questions = [
     {

@@ -10,8 +10,20 @@
 </head>
 <body>
     <div class="game-area">
+        <div id="rules" class="hide">
+            <ul>
+               <li>There are six questions</li>
+               <br>
+               <li>You get one point for each correct answer</li>
+               <br>
+               <li>Please enjoy!</li>
+               <br>
+            </ul>
+         </div>
+
         <div id="question-area" class="hide">
-            <div id="question">Questions</div>
+            <div id="question">Questions
+            </div>
             <div id="answer-buttons" class="button-grid">
                 <button class="btn">answer 1 </button>
                 <button class="btn">answer 2 </button>
@@ -19,9 +31,11 @@
                 <button class="btn">answer 4 </button>
             </div>
         </div>
+
         <div class="controls">
             <button id="start-button" class="start-button btn">Start</button>
             <button id="next-button" class="next-button btn hide">Next</button>
+            <button id="rules-button" class="rules-button btn">Rules</button>
         </div>
     </div>
 
