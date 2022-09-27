@@ -9,6 +9,8 @@ body {
     background-image: url(../images/games.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Indie Flower', cursive;
+
 }
 
 .game-area {
@@ -33,6 +35,9 @@ body {
     border-color: black;
     border-radius: 5px;
     padding: 8px 12px;
+    font-size: 18px;
+    font-family: 'Indie Flower', cursive;
+
 }
 
 .btn:hover {
@@ -40,7 +45,7 @@ body {
 }
 
 .start-button, .next-button, .rules-button {
-    font-size: 16px;
+    font-size: 30px;
     font-weight: bold;
     padding: 10px 20px;
 }
@@ -69,7 +74,18 @@ body {
 ul {
     list-style: none;
     text-align: center;
-    font-size: 17px;
+    font-size: 18px;
     padding: 0;
     margin: 0;
+}
+
+.title, .question {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.question {
+    font-size: 22px;
+    font-weight: bold;
 }
