@@ -41,9 +41,11 @@ function startGame () {
     setNextQuestion()
 }
 
-let score = 0;
+function incrementScore () {
 
-
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+}
 
 // function sets the next question
 function setNextQuestion () {
@@ -103,9 +105,9 @@ function selectAnswer(e) {
 
         if (score === 0) {
             endScreenScore.innerHTML = 
-            `Lets check out that score...\n
-            Oh dear...\n
-            You didn't get any right!\n
+            `Lets check out that score...
+            Oh dear...
+            You didn't get any right!
             better refresh your mind and try again!`
         } else if (score === 1) {
             endScreenScore.innerHTML = 
@@ -157,6 +159,7 @@ function setStatusClass (element, correct) {
         element.classList.add('wrong')
     }
 }
+
 
 // removes the above classes to reset for next question
 function clearStatusClass(element) {
